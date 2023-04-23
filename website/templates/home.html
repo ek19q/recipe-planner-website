@@ -2,22 +2,24 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<h1 align="center">Notes</h1>
-<ul class="list-group list-group-flush" id="notes">
-  {% for note in user.notes %}
-  <li class="list-group-item">
-    {{ note.data }}
-    <button type="button" class="close" onclick="deleteNote('{{note.id}}')">
-        <span aria-hidden="true">&times;</span>
-      </button>
-  </li>
-  {% endfor %}
-</ul>
-<form method="POST">
-    <textarea name="note" id="note" class="form-control"></textarea>
-    <br />
-    <div align="center">
-      <button type="submit" class="btn btn-primary">Add Note</button>
+<div class="wrapper">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="feature-box">
+        <h1>Recipe Manager</h1>
+        <p>A simple recipe manager to help you keep track of your favourite recipes in one place!
+        </p>
+        <div class="d-grid gap-2 col-6">
+          <button type="button" class="btn btn-secondary">Register</button>
+          <button type="button" class="btn btn-outline-secondary">Login</button>
+        </div>
+      </div>
     </div>
-</form> 
-{% endblock %}  
+    <div class="col-md-6 text-center">
+      <img src="static/img/home.jpg" class="rounded">
+    </div>
+  </div>
+</div>
+<!-- <img src="static/img/home-background.jpg" class="bkg-img"> -->
+
+{% endblock %}
